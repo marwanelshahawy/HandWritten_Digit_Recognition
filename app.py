@@ -5,7 +5,8 @@ from PIL import Image
 import io
 from flask import Flask, render_template, request, jsonify
 
-app = Flask(__name__)
+application = Flask(__name__)
+app = application  
 
 # Load the model
 MODEL_PATH = 'handwritten.keras'
