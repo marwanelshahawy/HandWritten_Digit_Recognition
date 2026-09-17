@@ -1,6 +1,6 @@
 pandas
 numpy
-tensorflow-cpu
+tflite-runtime
 scikit-learn
 matplotlib
 seaborn
