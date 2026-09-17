@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.canvas-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+#drawCanvas {
+    background-color: #000000;
+    border: 2px solid #333333;
+    border-radius: 8px;
+    cursor: crosshair;
+    touch-action: none;
+}
+
+.preview-wrapper {
+    text-align: center;
+    background-color: #1e1e1e;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 200px;
+}
+
+#previewCanvas {
+    background-color: #000000;
+    border: 1px solid #333333;
+    margin-top: 0.5rem;
+    image-rendering: pixelated;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+button {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0b5ed7;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#clearBtn {
+    background-color: #6c757d;
+}
+
+#clearBtn:hover {
+    background-color: #5c636a;
+}
+
+.results {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.results h2 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+#prediction {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #0d6efd;
+    letter-spacing: 2px;
+}
+
+.confidence {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.probabilities h3 {
+    text-align: left;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+#probabilityList {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+}
+
+#probabilityList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid #333333;
+}
+
+#probabilityList li:last-child {
+    border-bottom: none;
+}
+
+.probability-bar {
+    flex-grow: 1;
+    height: 10px;
+    background-color: #333333;
+    margin: 0 1rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.probability-fill {
+    height: 100%;
+    background-color: #0d6efd;
+    transition: width 0.3s ease;
+}
+
+@media (max-width: 600px) {
+    .canvas-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .preview-wrapper {
+        order: -1;
+        margin-bottom: 1rem;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    button {
+        width: 100%;
+    }
+}

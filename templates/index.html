@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handwritten Digit Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Handwritten Digit Recognition</h1>
+        <div class="canvas-wrapper">
+            <canvas id="drawCanvas" width="280" height="280"></canvas>
+            <div class="preview-wrapper">
+                <h3>Processed Input (28x28)</h3>
+                <canvas id="previewCanvas" width="140" height="140"></canvas>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="clearBtn">Clear</button>
+            <button id="predictBtn">Predict</button>
+        </div>
+        <div class="results">
+            <h2>Prediction: <span id="prediction">-</span></h2>
+            <div class="confidence">
+                Confidence: <span id="confidence">0%</span>
+            </div>
+            <div class="probabilities">
+                <h3>Probabilities:</h3>
+                <ul id="probabilityList">
+                    <!-- Will be populated by JavaScript -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
